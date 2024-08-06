@@ -1,0 +1,63 @@
+.container {
+  width: 250px;
+  min-height: 10vh;
+  border: 1px solid red;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.container-top {
+  margin-top: 0;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0rem;
+}
+
+.label {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.tag-container {
+  border: 1px solid black;
+  min-height: 30px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tag {
+  padding: 0.45rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 1rem;
+  font-weight: 500;
+}
+
+.container-below {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button-container button {
+  padding: 0.25rem 1.25rem;
+  border-radius: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
