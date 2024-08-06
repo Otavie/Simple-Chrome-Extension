@@ -1,52 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Otavie's Chrome Ext!</title>
-    <link rel="stylesheet" href="bulma.min.css">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body class="container">
-    <div class="container container-top">
-        <h1 class="title">Global Entry Drop</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Otavie's Chrome Ext!</title>
+        <link rel="stylesheet" href="bulma.min.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body class="container">
+        <div class="container container-top">
+            <h1 class="title">Global Entry Drop</h1>
 
-        <div class="field">
-            <label class="label">Status</label>
-            <div class="tag-container">
-                <span class="tag is-success">Running</span>
-                <span class="tag is-danger">Stopped</span>
+            <div class="field">
+                <label class="label">Status:</label>
+                <div class="tag-container">
+                    <span class="tag is-success">Running</span>
+                    <span class="tag is-danger">Stopped</span>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="container container-below">
-        <div class="field">
-            <label class="label">Location ID:</label>
-            <!-- <div class="select"> -->
-                <select id="location"></select>
-            <!-- </div> -->
-        </div>
+        <div class="container container-below">
+            <div class="field">
+                <label class="label">Location ID:</label>
+                <select id="locationId">
+                    <option value="lagos">Lagos</option>
+                    <option value="abuja">Abuja</option>
+                </select>
+            </div>
 
-        <div class="field">
-            <label class="label">Start Date:</label>
-            <!-- <div class="select"> -->
+            <div class="field">
+                <label class="label">Start Date:</label>
                 <input type="date" id="start-date">
-            <!-- </div> -->
-        </div>
+            </div>
 
-        <div class="field">
-            <label class="label">End Date:</label>
-            <!-- <div class="select"> -->
+            <div class="field">
+                <label class="label">End Date:</label>
                 <input type="date" id="end-date">
-            <!-- </div> -->
+            </div>
         </div>
-    </div>
 
-    <div class="button-container">
-        <button class="button is-success" id="startBTN">Save & Restart</button>
-        <button class="button is-danger" id="stopBTN">Stop</button>
-    </div>
+        <div class="button-container">
+            <button class="button is-success" id="startBTN">Save & Restart</button>
+            <button class="button is-danger" id="stopBTN">Stop</button>
+        </div>
 
-</body>
+    </body>
+    <script src="popup.js"></script>
 </html>
