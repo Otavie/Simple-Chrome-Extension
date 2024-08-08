@@ -8,7 +8,8 @@ startBtnID.onclick = function() {
     const prefs = {
         locID: locationID.value,
         start: startDateID.value,
-        end: endDateID.value
+        end: endDateID.value,
+        tzData: locationID.options[locationID.selectedIndex].getAttribute("data-tz")
     }
     chrome.runtime.sendMessage({
         event: 'onStart',
@@ -49,6 +50,7 @@ const setLocs = (locations) => {
         let optElement = document.createElement("option")
         optElement.value = location.id
         optElement.innerHTML = location.name
+        optElement.setAttribute("data-tz", location.tzData)
         locationID.appendChild(optElement)
     })
 }
