@@ -24,8 +24,8 @@ stopBtnID.onclick = function() {
     console.log("Stop Date is", startDateID.value)
 }
 
-chrome.storage.local.get(["locID", "start", "end"], (result) => {
-    const { locID: storedLocID, start: storedStartDate, end: storedEndDate } = result
+chrome.storage.local.get(["locID", "start", "end", "locs"], (result) => {
+    const { locID: storedLocID, start: storedStartDate, end: storedEndDate, locs: locations } = result
 
     if (storedLocID) {
         locationID.value = storedLocID
@@ -38,4 +38,6 @@ chrome.storage.local.get(["locID", "start", "end"], (result) => {
     if (storedEndDate) {
         endDateID.value = storedEndDate
     }
+
+    console.log(locations)
 })

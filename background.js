@@ -1,3 +1,10 @@
+import fetchLocs from "./api/fetchLocations.js"
+
+chrome.runtime.onInstalled.addListener(details => {
+    fetchLocs()
+})
+
+
 chrome.runtime.onMessage.addListener(data => {
     const { event, prefs } = data
     switch (event) {
@@ -9,7 +16,6 @@ chrome.runtime.onMessage.addListener(data => {
             break;
         default:
             break;
-
     }
 })
 
