@@ -27,6 +27,8 @@ stopBtnID.onclick = function() {
 chrome.storage.local.get(["locID", "start", "end", "locs"], (result) => {
     const { locID: storedLocID, start: storedStartDate, end: storedEndDate, locs: locations } = result
 
+    setLocs(locations)
+
     if (storedLocID) {
         locationID.value = storedLocID
     }
@@ -41,3 +43,12 @@ chrome.storage.local.get(["locID", "start", "end", "locs"], (result) => {
 
     console.log(locations)
 })
+
+const setLocs = (locations) => {
+    locations.forEach(location => {
+        let optElement = document.createElement("option")
+        optElement.value = location.id
+        optElement.innerHTML = location.name
+        locationID.appendChild(optElement)
+    })
+}
