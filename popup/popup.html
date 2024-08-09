@@ -14,14 +14,15 @@
             <div class="field">
                 <label class="label">Status:</label>
                 <div class="tag-container">
-                    <span class="tag is-success">Running</span>
-                    <span class="tag is-danger">Stopped</span>
+                    <span id="running" class="tag is-success">Running</span>
+                    <span id="stopped" class="tag is-danger">Stopped</span>
+                    <span id="nothing" class="tag">Nothing is running!</span>
                 </div>
             </div>
         </div>
 
         <div class="container container-below">
-            <div class="field">
+            <div class="field location-field">
                 <label class="label">Location ID:</label>
                 <select id="locationId">
                     <option value="" disabled selected>Select a Location</option>

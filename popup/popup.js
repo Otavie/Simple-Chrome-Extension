@@ -3,6 +3,17 @@ const startDateID = document.getElementById("start-date")
 const endDateID = document.getElementById("end-date")
 const startBtnID = document.getElementById("startBTN")
 const stopBtnID = document.getElementById("stopBTN")
+const running = document.getElementById("running")
+const stopped = document.getElementById("stopped")
+const nothing = document.getElementById("nothing")
+
+const enableBTN = (btn) => {
+    btn.disabled = false
+}
+
+const disableBTN = (btn) => {
+    btn.disabled = true
+}
 
 startBtnID.onclick = function() {
     const prefs = {
@@ -25,8 +36,14 @@ stopBtnID.onclick = function() {
     console.log("Stop Date is", startDateID.value)
 }
 
-chrome.storage.local.get(["locID", "start", "end", "locs"], (result) => {
-    const { locID: storedLocID, start: storedStartDate, end: storedEndDate, locs: locations } = result
+chrome.storage.local.get(["locID", "start", "end", "locs", "isRunning"], (result) => {
+    const {
+        locID: storedLocID,
+        start: storedStartDate,
+        end: storedEndDate,
+        locs: locations,
+        isRunning: runningStatus
+    } = result
 
     setLocs(locations)
 
@@ -42,7 +59,21 @@ chrome.storage.local.get(["locID", "start", "end", "locs"], (result) => {
         endDateID.value = storedEndDate
     }
 
-    console.log(locations)
+    if (runningStatus === true) {
+        running.style.display = "flex"
+        stopped.style.display = "none"
+        nothing.style.display = "none"
+        enableBTN(stopBtnID)
+        disableBTN(startBtnID)
+    } else if (runningStatus === false) {
+        running.style.display = "none"
+        nothing.style.display = "none"
+        stopped.style.display = "flex"
+        enableBTN(startBtnID)
+        disableBTN(stopBtnID)
+    }
+
+    console.log("Running status", runningStatus)
 })
 
 const setLocs = (locations) => {

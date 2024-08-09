@@ -22,6 +22,12 @@
   height: 40px;
 }
 
+.location-field {
+  display: flexbox;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .label {
   font-size: 0.9rem;
   font-weight: 500;
@@ -36,10 +42,14 @@
 }
 
 .tag {
-  padding: 0.45rem 1rem;
   font-size: 0.9rem;
-  border-radius: 1rem;
+  border-radius: 0rem;
   font-weight: 500;
+  height: 35px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
 }
 
 .container-below {
@@ -62,6 +72,7 @@
   font-size: 0.9rem;
   font-weight: 500;
   box-shadow: black 0px 1px 0px;
+  color: #ffffff;
 }
 
 .label:not(:last-child) {
@@ -73,4 +84,23 @@
 #end-date {
   min-width: 100px;
   padding: 5px;
+}
+
+#locationId {
+  width: 100%;
+}
+
+.is-success,
+#running {
+  background-color: #008f00;
+}
+
+.is-danger,
+#stopped {
+  background-color: #ff0000;
+}
+
+#nothing {
+  background-color: #636363;
+  display: flex;
 }
