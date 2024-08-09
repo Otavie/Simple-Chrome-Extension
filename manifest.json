@@ -4,7 +4,8 @@
     "description": "Just a simple chrome extension",
     "version": "1.0",
     "action": {
-        "default_popup": "popup/popup.html"
+        "default_popup": "popup/popup.html",
+        "default_icon": "images/icons-128.png"
     },
     "icons": {
         "16": "images/icons-16.png",
@@ -18,6 +19,7 @@
     },
     "permissions": [
         "storage",
-        "alarms"
+        "alarms",
+        "notifications"
     ]
 }
