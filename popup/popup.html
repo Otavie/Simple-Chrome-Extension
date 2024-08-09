@@ -11,7 +11,7 @@
         <div class="container container-top">
             <h1 class="title">Global Entry Drop</h1>
 
-            <div class="field">
+            <div class="field-container status-container">
                 <label class="label">Status:</label>
                 <div class="tag-container">
                     <span id="running" class="tag is-success">Running</span>
@@ -22,21 +22,28 @@
         </div>
 
         <div class="container container-below">
-            <div class="field location-field">
+            <div class="field-container location-field">
                 <label class="label">Location ID:</label>
                 <select id="locationId">
                     <option value="" disabled selected>Select a Location</option>
                 </select>
+                <p class="errorMessage locError">Enter a valid location</p>
             </div>
 
-            <div class="field">
-                <label class="label">Start Date:</label>
-                <input type="date" id="start-date">
+            <div class="field-container">
+                <div class="field">
+                    <label class="label">Start Date:</label>
+                    <input type="date" id="start-date">
+                </div>
+                <p class="errorMessage startDateError">Enter a valid start date</p>
             </div>
 
-            <div class="field">
-                <label class="label">End Date:</label>
-                <input type="date" id="end-date">
+            <div class="field-container">
+                <div class="field">
+                    <label class="label">End Date:</label>
+                    <input type="date" id="end-date">
+                </div>
+                <p class="errorMessage endDateError">Enter a valid end date</p>
             </div>
         </div>
 

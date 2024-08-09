@@ -2,6 +2,7 @@ import fetchLocs from "./api/fetchLocations.js"
 
 const ALARM_JOB_NAME = "DROP_ALARM"
 
+// Event Listener for when the Extension is Installed or Updated 
 chrome.runtime.onInstalled.addListener(details => {
     fetchLocs()
 })
@@ -41,9 +42,7 @@ const setRunningStatus = (isRunning) => {
 const createAlarm = () => {
     chrome.alarms.get(ALARM_JOB_NAME, existingAlarm => {
         if (!existingAlarm) {
-            chrome.alarms.create(ALARM_JOB_NAME, {
-                periodInMinutes: 1.0
-            })
+            chrome.alarms.create(ALARM_JOB_NAME, { periodInMinutes: 1.0 })
         }
     })
 }

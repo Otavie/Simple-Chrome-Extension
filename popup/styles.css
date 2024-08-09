@@ -1,3 +1,7 @@
+:root {
+  --bulma-field-block-spacing: 0rem;
+}
+
 .container {
   width: 250px;
   min-height: 10vh;
@@ -15,11 +19,23 @@
   font-weight: 600;
 }
 
-.field {
+.field-container {
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  height: 40px;
+  min-height: 20px;
+}
+
+.status-container {
+  flex-direction: row;
+}
+
+.field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .location-field {
@@ -103,4 +119,13 @@
 #nothing {
   background-color: #636363;
   display: flex;
+}
+
+.errorMessage {
+  color: #ff0000;
+  font-size: 0.9rem;
+  font-weight: 500;
+  width: 100%;
+  display: none;
+  justify-content: flex-end;
 }
